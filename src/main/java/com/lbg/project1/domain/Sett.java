@@ -6,18 +6,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Badger {
+public class Sett {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private Integer id;
 
-	private String type;
+	private String location;
 
-	private String skill;
+	private String material;
 
-	public Badger() {
+	public Sett() {
 		super();
 	}
 
@@ -29,25 +29,25 @@ public class Badger {
 		this.id = id;
 	}
 
-	public String getType() {
-		return type;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
-	public String getSkill() {
-		return skill;
+	public String getMaterial() {
+		return material;
 	}
 
-	public void setSkill(String skill) {
-		this.skill = skill;
+	public void setMaterial(String material) {
+		this.material = material;
 	}
 
 	@Override
 	public String toString() {
-		return "Badger [id=" + id + ", type=" + type + ", skill=" + skill + "]";
+		return "Sett [id=" + id + ", location=" + location + ", material=" + material + "]";
 	}
 
 }

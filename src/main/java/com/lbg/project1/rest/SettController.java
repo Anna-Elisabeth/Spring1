@@ -14,50 +14,50 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lbg.project1.domain.Badger;
-import com.lbg.project1.services.BadgerService;
+import com.lbg.project1.domain.Sett;
+import com.lbg.project1.services.SettService;
 
-@RequestMapping("/badger")
+@RequestMapping("/sett")
 @RestController
-public class BadgerController {
+public class SettController {
 
 	@Autowired
-	private BadgerService service;
+	private SettService service;
 
 	@PostMapping("/create")
-	public ResponseEntity<Badger> createBadger(@RequestBody Badger newBadger) {
-		return this.service.createBadger(newBadger);
+	public ResponseEntity<Sett> createSett(@RequestBody Sett newSett) {
+		return this.service.createSett(newSett);
+
 	}
 
 	@GetMapping("/get")
-	public List<Badger> getBadgers() {
-		return this.service.getBadgers();
+	public List<Sett> getSetts() {
+		return this.service.getSetts();
 	}
 
 	@GetMapping("/get/{id}")
-	public ResponseEntity<Badger> getBadger(@PathVariable int id) {
-		return this.service.getBadger(id);
-
+	public ResponseEntity<Sett> getSett(@PathVariable int id) {
+		return this.service.getSett(id);
 	}
 
 	@PatchMapping("/patch/{id}")
-	public ResponseEntity<Badger> patchBadger(@PathVariable int id, @RequestBody Badger updatedBadger) {
+	public ResponseEntity<Sett> patchSett(@PathVariable int id, @RequestBody Sett updatedSett) {
 
-		return this.service.patchBadger(id, updatedBadger);
+		return this.service.patchSett(id, updatedSett);
 
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public boolean deleteBadger(@PathVariable int id)
+	public boolean deleteSett(@PathVariable int id)
 
 	{
-		return this.service.deleteBadger(id);
+		return this.service.deleteSett(id);
 
 	}
 
 	@PutMapping("/put/{id}")
-	public ResponseEntity<Badger> updateBadger(@PathVariable int id, @RequestBody Badger newBadger) {
-		return this.service.updateBadger(id, newBadger);
+	public ResponseEntity<Sett> updateSett(@PathVariable int id, @RequestBody Sett newSett) {
+		return this.service.updateSett(id, newSett);
 
 	}
 
